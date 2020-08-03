@@ -21,14 +21,21 @@ public class Solution {
             list.add(s);
         }
 
-        ArrayList<String> listUpperCase = new ArrayList<String>();
-        for (int i = 0; i < list.size(); i++) {
-            String s = list.get(i);
-            listUpperCase.add(s.toUpperCase());
+        ArrayList<String> newList = new ArrayList<>();
+
+        for (String s: list){
+            int size = s.length();
+            if(size%2==0){
+                String lineEven = s + " " + s;
+                newList.add(lineEven);
+            }else {
+                String lineOdd = s + " " + s + " " + s;
+                newList.add(lineOdd);
+            }
         }
 
-        for (int i = 0; i < listUpperCase.size(); i++) {
-            System.out.println(listUpperCase.get(i));
+        for (String ns:newList){
+            System.out.println(ns);
         }
 
     }

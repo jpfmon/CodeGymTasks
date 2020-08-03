@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 
 /* 
 In decreasing order
@@ -29,5 +30,17 @@ public class Solution {
         //write your code here
 
         Arrays.sort(array);
+
+        int[] newArray = new int[20];
+
+        for(int i=0;i<=19;i++){
+            newArray[i] = array[19-i];
+        }
+
+        for(int j=0;j<=19;j++){
+            array[j] = newArray[j];
+        }
+
+
     }
 }

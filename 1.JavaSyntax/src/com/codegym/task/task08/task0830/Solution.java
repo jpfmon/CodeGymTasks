@@ -25,10 +25,23 @@ public class Solution {
 
     public static void sort(String[] array) {
         //write your code here
+
+        for(int i=0;i<array.length-1;i++){
+            for(int j=i+1;j<array.length;j++){
+                if(isGreaterThan(array[i],array[j])!=false){
+                    String c = array[j];
+                    array[j] = array[i];
+                    array[i] = c;
+                }
+            }
+        }
     }
 
     // String comparison method: 'a' is greater than 'b'
     public static boolean isGreaterThan(String a, String b) {
+
+//        System.out.println(a.compareTo(b));
+//        System.out.println(a + " anterior a " + b + " : " + a.compareTo(b));
         return a.compareTo(b) > 0;
     }
 }

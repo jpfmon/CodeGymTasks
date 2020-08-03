@@ -1,9 +1,9 @@
-package com.codegym.task.task09.task0928;
+package com.codegym.task.task09.task0929;
 
 import java.io.*;
 
 /* 
-The code won't compile…
+Let's make the code do something useful!
 
 */
 
@@ -12,22 +12,22 @@ public class Solution {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         String sourceFileName = reader.readLine();
+        InputStream fileInputStream = null;
+        try {
+            fileInputStream = getInputStream(sourceFileName);
+        } catch (Exception e) {
+            System.out.println("File does not exist.");
+            sourceFileName = reader.readLine();
+            fileInputStream = getInputStream(sourceFileName);
+        }
         String destinationFileName = reader.readLine();
 
-        InputStream fileInputStream = getInputStream(sourceFileName);
         OutputStream fileOutputStream = getOutputStream(destinationFileName);
 
-
-        int count = 0;
-
-        int data = fileInputStream.read();
-        while (data!=-1){
+        while (fileInputStream.available() > 0) {
+            int data = fileInputStream.read();
             fileOutputStream.write(data);
-            count++;
-            data = fileInputStream.read();
         }
-
-        System.out.println("Bytes copied: " + count);
 
         fileInputStream.close();
         fileOutputStream.close();
@@ -41,3 +41,4 @@ public class Solution {
         return new FileOutputStream(fileName);
     }
 }
+
