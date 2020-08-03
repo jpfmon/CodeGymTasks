@@ -29,10 +29,33 @@ public class Solution {
 
     public static void sort(String[] array) {
         // write your code here
+
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i+1; j < array.length; j++) {
+                if (isNumber(array[i]) && isNumber(array[j])) {
+//                    System.out.println("Comparing: " + array[i] + " and " + array[j]);
+//                    System.out.println(array[i] + " is greater than " + array[j] + " : " + isGreaterThan(array[i], array[j]));
+                    if (Integer.parseInt(array[i])<Integer.parseInt(array[j])) {
+                        String c = array[j];
+                        array[j] = array[i];
+                        array[i] = c;
+                    }
+                } else if (!isNumber(array[i]) && !isNumber(array[j])) {
+                    if (isGreaterThan(array[i], array[j])) {
+                        String c = array[j];
+                        array[j] = array[i];
+                        array[i] = c;
+                    }
+                }
+            }
+        }
+
     }
 
     // String comparison method: 'a' is greater than 'b'
     public static boolean isGreaterThan(String a, String b) {
+
         return a.compareTo(b) > 0;
     }
 
