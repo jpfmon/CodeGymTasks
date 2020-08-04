@@ -16,8 +16,21 @@ public class Solution {
         }
 
         //write your code here
+        Integer max = Integer.MIN_VALUE;
+        Integer min = Integer.MAX_VALUE;
 
-        return new Pair<Integer, Integer>(0, 0);
+        for(int n:array){
+            if(n<min){
+                min = n;
+            }
+
+            if(n>max){
+                max = n;
+            }
+        }
+
+
+        return new Pair<Integer, Integer>(min, max);
     }
 
 

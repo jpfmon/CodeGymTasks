@@ -2,6 +2,7 @@ package com.codegym.task.task10.task1020;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 /* 
 Task about algorithms
@@ -24,5 +25,10 @@ public class Solution {
 
     public static void sort(int[] array) {
         //write your code here
+
+        Arrays.sort(array);
+
+
+
     }
 }

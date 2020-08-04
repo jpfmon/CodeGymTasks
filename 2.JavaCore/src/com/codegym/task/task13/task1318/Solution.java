@@ -33,8 +33,8 @@ public class Solution {
 
         Reader nuevo = new InputStreamReader(inStream);
 
-        while (inStream.available() > 0){
-            System.out.print(nuevo.read());
+        while (nuevo.ready()){
+            System.out.print((char)nuevo.read());
         }
         inStream.close();
         inputStream.close();

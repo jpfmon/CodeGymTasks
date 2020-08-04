@@ -2,14 +2,7 @@ package com.codegym.task.task12.task1233;
 
 /* 
 The isomorphs are coming
-Write a method that returns the minimum of an array and its position (index).
 
-
-Requirements:
-1. The Solution class must have a Pair class.
-2. The Solution class must have two methods.
-3. The Solution class must have a getMinimumAndIndex() method.
-4. The getMinimumAndIndex() method must return the minimum of the array and its position (index).
 */
 
 public class Solution {
@@ -29,11 +22,17 @@ public class Solution {
 
         //write your code here
 
+        Integer min = Integer.MAX_VALUE;
+        Integer index = 0;
 
+        for(int i=0;i<array.length;i++){
+            if(array[i]<min){
+                min=array[i];
+                index = i;
+            }
+        }
 
-
-
-        return new Pair<Integer, Integer>(0, 0);
+        return new Pair<Integer, Integer>(min, index);
     }
 
 
