@@ -12,24 +12,37 @@ public class Solution {
     public static void main(String[] args) {
         List<Number> list = new LinkedList<>();
         // 3
+
+        initList(list);
+
+        // 4 - Correct 2 bugs
+        printListValues(list);
+
+        // 5
+        processCastObjects(list);
+    }
+
+    public static void initList(List<Number> list){
         list.add(new Double(1000f));
         list.add(new Double("123e-445632"));
         list.add(new Float(-90 / -3));
         list.remove(new Double("123e-445632"));
+    }
 
-        // 4 - Correct 2 bugs
-        for (int i = 0; i <= list.size(); i--) {
+    public static void printListValues(List<Number> list){
+        for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
         }
+    }
 
-        // 5
+    public static void processCastObjects(List<Number> list){
         for (Number object : list) {
             // Correct 2 bugs
             if (object instanceof Float) {
-                Double a = (Double) object;
+                Float a = (Float) object;
                 System.out.println("Is float defined? " + !(a.isNaN()));
             } else if (object instanceof Double) {
-                Float a = (Float) object;
+                Double a = (Double) object;
                 System.out.println("Is double infinite? " + a.isInfinite());
             }
         }
